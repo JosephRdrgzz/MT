@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Encuesta de Interés para Asesorías</title>
+	<link rel="stylesheet" href="styles.css">
+	<script src="scripts.js"></script>
+</head>
+<body>
+	<p><a href="index.html">Regresar al index</a></p>
+
+	<h1>Encuesta de Interés para Asesorías</h1>
+	<form action="">
+		Nombre: <input type="text" id="nombre" required> <br>
+		Correo Electrónico: <input type="email" id="correo" required> <br>
+		
+		<h2>Modalidad Preferida:</h2>
+		<input type="radio" name="modalidad" id="online" value="En línea"> En línea <br>
+		<input type="radio" name="modalidad" id="presencial" value="Presencial"> Presencial <br>
+		<input type="radio" name="modalidad" id="mixta" value="Mixta"> Mixta <br>
+		
+		<h2>Materias de Interés:</h2>
+		<input type="checkbox" id="programacion" name="materia" value="Programación"> Programación <br>
+		<input type="checkbox" id="bases_datos" name="materia" value="Bases de Datos"> Bases de Datos <br>
+		<input type="checkbox" id="redes" name="materia" value="Redes"> Redes <br>
+		
+		<h2>Fecha y Hora:</h2>
+		<input type="datetime-local" id="fecha_hora" required> <br>
+		
+		<h2>Color Favorito:</h2>
+		<input type="color" id="color_favorito" required> <br>
+		
+		<h2>Complejidad del tema:</h2>
+		<input type="range" id="horario" min="1" max="100" step="1" required> <br>
+		
+	</form>
+	<button type="submit" onclick="registrar()">Enviar</button>
+	<table id="encuesta">
+	
+	</table>
+
+	<h1>Navegación de Archivos</h1>
+    <div id="navegacionArchivos">
+        <ul>
+            <li><a href="index.html">Ver Archivo: index.html</a></li>
+            <br>
+
+
+            Práctica 2. HTML
+            <li><a href="tarea1.html">Ver Archivo: tarea1.html</a></li>
+            <br>
+
+            Práctica 3. Tablas en HTML, enlaces y CSS
+            <li><a href="tabla2.html">Ver Archivo: tabla2.html</a></li>
+            <li><a href="tarea3.html">Ver Archivo: tarea3.html</a></li>
+            <li><a href="imagenes.html">Ver Archivo: imagenes.html</a></li>
+            <br>
+
+
+            Práctica 4. JavaScript 1
+            <li><a href="calificaciones.html">Ver Archivo: calificaciones.html</a></li>
+            <li><a href="factorial.html">Ver Archivo: factorial.html</a></li>
+            <li><a href="imprimirForm.html">Ver Archivo: imprimirForm.html</a></li>
+            <br>
+
+            Práctica 5. JavaScript 2
+            <li><a href="practica5_Rodriguez.html">Ver Archivo: practica5_Rodriguez.html</a></li>
+            <br>
+
+            Proyecto Intermedio
+            <li><a href="litstasMT.html">Ver Archivo: litstasMT.html</a></li>
+            <br>
+
+            Acerca de mí
+            <li><a href="index.html#acerca">Acerca de mí</a></li>
+
+
+        </ul>
+    </div>
+
+</table>
+</body>
+</html>

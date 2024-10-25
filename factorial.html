@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Factorial Calculator</title>
+    <script>
+        function calcularFactorial() {
+            inputNumero = document.getElementById("numero");
+            var resultado = document.getElementById("resultado");
+
+            var numero = parseInt(inputNumero.value);
+
+            if (numero >= 0) {
+                var factorial = calcularFactorialRecursivo(numero);
+                resultado.textContent = "El factorial de " + numero + " es: " + factorial;
+            } else {
+                resultado.textContent = "No usar números negativos";
+            }
+        }
+
+        function calcularFactorialRecursivo(n) {
+            if (n == 0) {
+                return 1;
+            } else {
+                return n * calcularFactorialRecursivo(n - 1);
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="styles.css">
+
+</head>
+<body>
+    <p><a href="index.html">Regresar al index</a></p>
+
+    <h1>Factorial Recursivo</h1>
+    <form>
+        <label for="numero">Ingrese un número:</label>
+        <input type="number" id="numero">
+        <button type="button" onclick="calcularFactorial()">Calcular</button>
+    </form>
+    <p id="resultado"></p>
+
+    <h1>Navegación de Archivos</h1>
+    <div id="navegacionArchivos">
+        <ul>
+            <li><a href="index.html">Ver Archivo: index.html</a></li>
+            <br>
+
+
+            Práctica 2. HTML
+            <li><a href="tarea1.html">Ver Archivo: tarea1.html</a></li>
+            <br>
+
+            Práctica 3. Tablas en HTML, enlaces y CSS
+            <li><a href="tabla2.html">Ver Archivo: tabla2.html</a></li>
+            <li><a href="tarea3.html">Ver Archivo: tarea3.html</a></li>
+            <li><a href="imagenes.html">Ver Archivo: imagenes.html</a></li>
+            <br>
+
+
+            Práctica 4. JavaScript 1
+            <li><a href="calificaciones.html">Ver Archivo: calificaciones.html</a></li>
+            <li><a href="factorial.html">Ver Archivo: factorial.html</a></li>
+            <li><a href="imprimirForm.html">Ver Archivo: imprimirForm.html</a></li>
+            <br>
+
+            Práctica 5. JavaScript 2
+            <li><a href="practica5_Rodriguez.html">Ver Archivo: practica5_Rodriguez.html</a></li>
+            <br>
+
+            Proyecto Intermedio
+            <li><a href="litstasMT.html">Ver Archivo: litstasMT.html</a></li>
+            <br>
+
+            Acerca de mí
+            <li><a href="index.html#acerca">Acerca de mí</a></li>
+
+
+        </ul>
+    </div>
+</body>
+</html>

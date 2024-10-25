@@ -1,0 +1,104 @@
+<!DOCTYPE html> 
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Wild Project</title>
+    <link rel="stylesheet" href="estilosMultimedia.css">
+    <!-- No le pude poner fondo específico sin que se perdiera el mapa con el color-->
+</head>
+<body>
+    <p><a href="index.html">Regresar al index</a></p>
+    <h1>Bienvenido a The Wild Project</h1>
+    <h2>Audio</h2>
+    <div class="center">
+        <audio source src="audio.mp3" controls>
+            Tu navegador no soporta el elemento de audio.
+        </audio>
+    </div>
+
+    <h2>Video Local</h2>
+    <div class="center">
+        <video src="videoWild.mp4" height="480" controls>
+            Tu navegador no soporta el elemento de video.
+        </video>
+    </div>
+
+    <h2>Video de YouTube</h2>
+    <div class="center">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/48Ltw4R6yIA?si=eIoH37zvdyJoF-bY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+    </div>
+
+    <h2>Feed de Twitter</h2>
+    <div class="twitter-feed">
+        <a class="twitter-timeline" href="https://twitter.com/JordiWild?ref_src=twsrc%5Etfw" data-tweet-limit="1">Tweets de Jordi Wild</a> 
+        <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>       
+    </div>
+
+    <h2>Feed de Facebook</h2>
+    <div class="center">
+        <script async defer src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.2"></script>  
+        <div class="fb-post" 
+            data-width="500">
+            <iframe src="https://www.facebook.com/plugins/video.php?height=476&href=https%3A%2F%2Fwww.facebook.com%2FTheWildProjectOficial%2Fvideos%2F563794616124923%2F&show_text=false&width=476&t=0" width="476" height="476" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowfullscreen="true" allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" allowFullScreen="true"></iframe>
+        </div>
+        
+
+    </div>
+
+    <h2>Geolocalización</h2>
+    <div class="center">
+        <p>Presione el botón para obtener su ubicación.</p>
+        <button onclick="getLocation()">Presionar</button>
+        <p id="demo"></p>
+        <div id="mapholder" class="map-holder"></div>
+    </div>
+
+    <script>
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition, showError);
+            } else {
+                document.getElementById("demo").innerHTML = "Su navegador no soporta la geolocalización.";
+            }
+        }
+
+        function showPosition(position) {
+            var latlon = position.coords.latitude + "," + position.coords.longitude;
+            var img_url = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlon + "&zoom=14&size=400x300&key=AIzaSyAcmKWHow7Xr3SUxWSvyqf-Op9-gFyyoOg";
+            document.getElementById("mapholder").innerHTML = "<img src='" + img_url + "'>";
+            
+            //mostrar mapa 
+            var mapOptions = {
+                center: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                zoom: 14,
+                mapTypeId: google.maps.MapTypeId.ROADMAP
+            };
+            var map = new google.maps.Map(document.getElementById("mapholder"), mapOptions);
+            var marker = new google.maps.Marker({
+                position: new google.maps.LatLng(position.coords.latitude, position.coords.longitude),
+                map: map,
+                title: "Tu ubicación"
+            });
+        }
+
+        function showError(error) {
+            switch (error.code) {
+                case error.PERMISSION_DENIED:
+                    document.getElementById("demo").innerHTML = "El usuario declinó la petición de Geolocalización.";
+                    break;
+                case error.POSITION_UNAVAILABLE:
+                    document.getElementById("demo").innerHTML = "La información de geolocalización no está disponible.";
+                    break;
+                case error.TIMEOUT:
+                    document.getElementById("demo").innerHTML = "La petición del usuario rebasó el tiempo de espera.";
+                    break;
+                case error.UNKNOWN_ERROR:
+                    document.getElementById("demo").innerHTML = "Error desconocido.";
+                    break;
+            }
+        }
+    </script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAcmKWHow7Xr3SUxWSvyqf-Op9-gFyyoOg"></script>
+</body>
+</html>

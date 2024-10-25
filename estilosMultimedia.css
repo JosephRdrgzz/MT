@@ -1,0 +1,21 @@
+*{
+    color: brown;
+    
+}
+h1, h2 {
+    text-align: center;
+}
+.center {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+.map-holder {
+    height: 400px;
+    width: 100%;
+}
+.twitter-feed {
+    width: 100%;
+    max-width: 600px; 
+    margin: 0 auto; 
+}

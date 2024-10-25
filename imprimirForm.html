@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+
+    <script>
+        function mostrarInformacion() {
+            var nombre = document.getElementById("nombre").value;
+            var correo = document.getElementById("correo").value;
+            var edad = document.getElementById("edad").value;
+            if(document.getElementById("male").checked){
+                var genero= " macho";
+            }else if(document.getElementById("female").checked){
+                var genero= " hembra";
+            }else if(document.getElementById("other").checked){
+                var genero= " LGBTQ";
+            }
+            var fechaNacimiento = document.getElementById("fechaNacimiento").value;
+            var colorFavorito = document.getElementById("colorFavorito").value;
+            
+            var informacion = nombre + ", " + correo + ", " + edad + " años, " + genero + ", nacido el " + fechaNacimiento + ", color favorito: " + colorFavorito;
+            
+            document.getElementById("informacion").innerHTML = informacion;
+        }
+    </script>
+</head>
+<body>
+    <p><a href="index.html">Regresar al index</a></p>
+
+    <form id="myForm">
+        <h2>Nombre:</h2>
+        <input type="text" id="nombre" name="nombre"><br><br>
+        
+        <h2>Correo:</h2>
+        <input type="email" id="correo" name="correo"><br><br>
+        
+        <h2>Edad:</h2>
+        <input type="number" id="edad" name="edad"><br><br>
+        
+        <h2>Género</h2>
+        <input type="radio" id="male" name="genero" value="masculino">Masculino
+        <input type="radio" id="female" name="genero" value="femenino">Femenino
+        <input type="radio" id="other" name="genero" value="otro">No binario<br><br>
+        <br><br>
+        
+        <h2>Fecha de nacimiento:</h2>
+        <input type="date" id="fechaNacimiento" name="fechaNacimiento"><br><br>
+        
+        <h2>Color favorito:</h2>
+        <input type="color" id="colorFavorito" name="colorFavorito"><br><br>
+        
+        <input type="button" value="Enviar" onclick="mostrarInformacion()">
+    </form>
+    
+    <p id="informacion"></p>
+
+
+    <h1>Navegación de Archivos</h1>
+    <div id="navegacionArchivos">
+        <ul>
+            <li><a href="index.html">Ver Archivo: index.html</a></li>
+            <br>
+
+
+            Práctica 2. HTML
+            <li><a href="tarea1.html">Ver Archivo: tarea1.html</a></li>
+            <br>
+
+            Práctica 3. Tablas en HTML, enlaces y CSS
+            <li><a href="tabla2.html">Ver Archivo: tabla2.html</a></li>
+            <li><a href="tarea3.html">Ver Archivo: tarea3.html</a></li>
+            <li><a href="imagenes.html">Ver Archivo: imagenes.html</a></li>
+            <br>
+
+
+            Práctica 4. JavaScript 1
+            <li><a href="calificaciones.html">Ver Archivo: calificaciones.html</a></li>
+            <li><a href="factorial.html">Ver Archivo: factorial.html</a></li>
+            <li><a href="imprimirForm.html">Ver Archivo: imprimirForm.html</a></li>
+            <br>
+
+            Práctica 5. JavaScript 2
+            <li><a href="practica5_Rodriguez.html">Ver Archivo: practica5_Rodriguez.html</a></li>
+            <br>
+
+            Proyecto Intermedio
+            <li><a href="litstasMT.html">Ver Archivo: litstasMT.html</a></li>
+            <br>
+
+            Acerca de mí
+            <li><a href="index.html#acerca">Acerca de mí</a></li>
+
+
+        </ul>
+    </div>
+
+</body>
+</html>
